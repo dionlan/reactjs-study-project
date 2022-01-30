@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 export default function ExampleEffect001(){
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
 
     /**
      * recebe dois parâmetros. O Primeiro é uma função do tipo arrow function, o segundo é um array de parâmetros.
@@ -12,6 +12,7 @@ export default function ExampleEffect001(){
      */
     useEffect(() => {
         document.title = counter; 
+        return () => document.title = 'React App;'
     }, [counter]); // executa apenas uma vez com [] vazio; 
 
     return(
